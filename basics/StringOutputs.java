@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Main {
+public class StringOutputs {
 
 	public static void main(String[] args) {
 		char c = 'z';
@@ -11,7 +11,7 @@ public class Main {
 		long l = 10000000L;
 		float f = 1234245.435234f;
 		double d = 112312312331.34;
-		
+
 		System.out.println(c);
 		System.out.println(bool);
 		System.out.println(b);
@@ -20,14 +20,12 @@ public class Main {
 		System.out.println(l);
 		System.out.println(f);
 		System.out.println(d);
-		
+
 		System.out.println( "the value of s is "  + s );
 		System.out.println( s + " is the value of s ");
-		
+
 		Date myDate = new Date();
 		System.out.println("The new date is " + myDate);
-		
-		
 	}
 
 }

@@ -1,15 +1,15 @@
 import java.io.*;
 
-public class Calculator2 {
+public class AdvCalculator {
 
 	public static void main(String[] args) {
 		String s1 = getInput("Enter a numeric value: ");
 		String s2 = getInput("Enter a numeric value: ");
 		String op = getInput("Enter 1=Add, 2=Substract, 3=Multiply, 4=Divide : ");
-		
+
 		int opInt = Integer.parseInt(op);
 		double result = 0;
-		
+
 		switch (opInt) {
 		case 1:
 			result = addValues(s1,s2);
@@ -28,11 +28,11 @@ public class Calculator2 {
 			System.out.println("You entered an incorrect value");
 			break;
 		}
-				
+
 	System.out.println("The answer is " + result);
 	}
-	
-	
+
+
 	// divide
 	private static double divideValues(String s1, String s2) {
 		double d1 = Double.parseDouble(s1);
@@ -41,7 +41,7 @@ public class Calculator2 {
 		return result;
 	}
 
-	
+
 	// multiply
 	private static double multiplyValues(String s1, String s2) {
 		double d1 = Double.parseDouble(s1);
@@ -50,7 +50,7 @@ public class Calculator2 {
 		return result;
 	}
 
-	
+
 	// subtract
 	private static double subtractValues(String s1, String s2) {
 		double d1 = Double.parseDouble(s1);
@@ -59,7 +59,7 @@ public class Calculator2 {
 		return result;
 	}
 
-	
+
 	// add
 	private static double addValues(String s1, String s2)
 			throws NumberFormatException {
@@ -68,8 +68,8 @@ public class Calculator2 {
 		double result = d1 + d2;
 		return result;
 	}
-	
-	
+
+
 	// get input
 	private static String getInput(String prompt) {
 		BufferedReader stdin = new BufferedReader(
@@ -77,7 +77,7 @@ public class Calculator2 {
 
 		System.out.print(prompt);
 		System.out.flush();
-		
+
 		try {
 			return stdin.readLine();
 		} catch (Exception e) {
