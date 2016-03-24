@@ -8,11 +8,11 @@ public class Main {
 		try {
 			URI uri = new URI("http://somecompany.com");
 		} catch (URISyntaxException e) {
-	
+
 			System.out.println(e.getMessage());
 		}
 		System.out.println("I'm alive!");
-	
+
 	}
 
 }
