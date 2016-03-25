@@ -2,7 +2,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 
-public class Main {
+public class Debugger {
 
 	public static void main(String[] args) {
 		try {
