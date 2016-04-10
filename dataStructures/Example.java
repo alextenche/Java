@@ -1,38 +1,36 @@
+package com.nedflanders;
+
 import java.util.Arrays;
 import java.util.Date;
-
-import com.nedflanders.Tweet;
-import com.nedflanders.Tweets;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Example {
 
-  public static void main(String args[]) {
-
-    Tweet tweet = new Tweet("noob", "Hello to all new java tudents, out there!", new Date(1424960247000L));
-    Tweet secondTweet = new Tweet("another noob", "learning Java is funn", new Date());
-    Tweet thirdTweet = new Tweet(
-      "journeytocode",
-      "@treehouse makes learning Java sooooo fun! #treet",
-      new Date(1421878767000L)
-    );
-
-    System.out.printf("This is a new treet: %s %n", tweet);
-    System.out.println("The words are:");
-    for(String word : tweet.getWords()){
-      System.out.println(word);
-    }
-
-    Tweet[] tweets = {tweet, secondTweet, thirdTweet};
-    Arrays.sort(tweets);
-    for(Tweet exampleTweet : tweets){
-      System.out.println(exampleTweet);
-    }
-    Tweets.save(tweets);
-    Tweet[] reloadedTweets = Tweets.load();
-    for(Tweet reloaded : reloadedTweets) {
-      System.out.println(reloaded);
-    }
-
-  }
+	public static void main(String[] args) {
+		
+		Tweet firstTweet = new Tweet("noob", "Hello to @all new #Java #students, out there!", new Date(1424960247000L));
+	    Tweet secondTweet = new Tweet("another noob", "learning #Java is funn", new Date());
+	    Tweet thirdTweet = new Tweet("journeytocode","@treehouse makes learning #Java sooooo fun! #tweet", new Date(1421878767000L));
+	    
+	    Tweet[] tweets = {firstTweet, secondTweet, thirdTweet};
+		System.out.printf("There are %d treets. %n", tweets.length);
+		Tweet originalTweet = tweets[0];
+		
+		System.out.println("Hashtags: ");
+		for(String hashtag : originalTweet.getHashTags()){
+			System.out.println(hashtag);
+		}
+		
+		Set<String> allHashTags = new HashSet<String>();
+		Set<String> allHashMentions = new TreeSet<String>();
+		for(Tweet tweet : tweets){
+			allHashTags.addAll(tweet.getHashTags());
+			allHashMentions.addAll(tweet.getMentions());
+		}
+		System.out.printf("Hash tags: %s %n", allHashTags);
+		System.out.printf("Mentions: %s %n", allHashMentions);
+	}
 
 }
